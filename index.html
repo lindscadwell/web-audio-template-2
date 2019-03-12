@@ -29,7 +29,7 @@
 
 // Create a pitch shifter and connect its output to the master out
 var pitchShift = new Tone.PitchShift().toMaster();
-
+var filterShift = new Tone
 // Create a synth and connect it to the pitch shifter
 var synth = new Tone.Synth({
   oscillator: {
@@ -42,6 +42,9 @@ var synth = new Tone.Synth({
     release: 1
   }
 }).connect(pitchShift);
+
+var sample = new Tone.Player('audio/FunkSample.mp3').connect(pitchShift);
+
 
 // Sample code to load a sound file
 // NOTE: This sound file is not played in this script
@@ -63,9 +66,9 @@ pitchShiftSlider.addEventListener('input', function() {
 // The following block of code will run when the play button is clicked
 document.querySelector('#playButton').onclick = function() {
   console.log('The play button has been clicked.');
-
+  sample.start()
   // Play a middle C, which will sound until the stop button is clicked
-  synth.triggerAttack('C4');
+  synth.triggerAttack();
 };
 
 // The following block of code will run when the stop button is clicked
