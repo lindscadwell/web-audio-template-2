@@ -21,6 +21,15 @@
     <label id="pitchShiftLabel" for="pitchShiftSlider">0</label>
     <input type="range" id="pitchShiftSlider" name="pitchShiftSlider" min="-12" max="12" step="0.5" />
   </fieldset>
+  <div class="dropdown">
+  <button onclick="myFunction()" class="dropbtn">Dropdown</button>
+  <div id="myDropdown" class="dropdown-content">
+    <a href="#">Kick 1</a>
+    <a href="#">Kick 2</a>
+    <a href="#">Kick 3</a>
+    <a href="#">Kick 4</a>
+  </div>
+</div>
 </main>
 
 <script src="js/Tone.js"></script>
@@ -45,6 +54,30 @@ var synth = new Tone.Synth({
     release: 1
   }
 }).connect(pitchShift);
+
+
+// Drop Down Menu
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+
+
 
 
 // Variables for different sound files
@@ -105,9 +138,6 @@ var pad4 = new Tone.Player('audio/pad4.mp3').chain(pitchShift);
 
 
 
-// Sound selected
-
-var kick =
 
 
 
