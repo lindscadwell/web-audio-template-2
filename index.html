@@ -46,7 +46,86 @@ var synth = new Tone.Synth({
   }
 }).connect(pitchShift);
 
-var sample = new Tone.Player('audio/FunkSample.mp3').chain(pitchShift, reverb);
+
+// Variables for different sound files
+// Kick drums
+var kick1 = new Tone.Player('audio/kick1.mp3').chain(pitchShift);
+var kick2 = new Tone.Player('audio/kick2.mp3').chain(pitchShift);
+var kick3 = new Tone.Player('audio/kick3.mp3').chain(pitchShift);
+var kick4 = new Tone.Player('audio/kick4.mp3').chain(pitchShift);
+
+// Snare drums
+var snare1 = new Tone.Player('audio/snare1.mp3').chain(pitchShift);
+var snare2 = new Tone.Player('audio/snare2.mp3').chain(pitchShift);
+var snare3 = new Tone.Player('audio/snare3.mp3').chain(pitchShift);
+var snare4 = new Tone.Player('audio/snare4.mp3').chain(pitchShift);
+
+// Hi-Hats
+var hh1 = new Tone.Player('audio/hh1.mp3').chain(pitchShift);
+var hh2 = new Tone.Player('audio/hh2.mp3').chain(pitchShift);
+var hh3 = new Tone.Player('audio/hh3.mp3').chain(pitchShift);
+var hh4 = new Tone.Player('audio/hh4.mp3').chain(pitchShift);
+
+// Crashes
+var crash1 = new Tone.Player('audio/crash1.mp3').chain(pitchShift);
+var crash2 = new Tone.Player('audio/crash2.mp3').chain(pitchShift);
+var crash3 = new Tone.Player('audio/crash3.mp3').chain(pitchShift);
+var crash4 = new Tone.Player('audio/crash4.mp3').chain(pitchShift);
+
+// Percussion
+var perc1 = new Tone.Player('audio/chords4.mp3').chain(pitchShift);
+var perc2 = new Tone.Player('audio/chords4.mp3').chain(pitchShift);
+var perc3 = new Tone.Player('audio/chords4.mp3').chain(pitchShift);
+var perc4 = new Tone.Player('audio/chords4.mp3').chain(pitchShift);
+
+// Bass
+var bass1 = new Tone.Player('audio/kick1.mp3').chain(pitchShift);
+var bass2 = new Tone.Player('audio/kick1.mp3').chain(pitchShift);
+var bass3 = new Tone.Player('audio/kick1.mp3').chain(pitchShift);
+var bass4 = new Tone.Player('audio/kick1.mp3').chain(pitchShift);
+
+// Lead synth
+var synth1 = new Tone.Player('audio/synth1.mp3').chain(pitchShift);
+var synth2 = new Tone.Player('audio/synth2.mp3').chain(pitchShift);
+var synth3 = new Tone.Player('audio/synth3.mp3').chain(pitchShift);
+var synth4 = new Tone.Player('audio/synth4.mp3').chain(pitchShift);
+
+// Chords
+var chords1 = new Tone.Player('audio/chords1.mp3').chain(pitchShift);
+var chords2 = new Tone.Player('audio/chords2.mp3').chain(pitchShift);
+var chords3 = new Tone.Player('audio/chords3.mp3').chain(pitchShift);
+var chords4 = new Tone.Player('audio/chords4.mp3').chain(pitchShift);
+
+// Pads
+var pad1 = new Tone.Player('audio/pad1.mp3').chain(pitchShift);
+var pad2 = new Tone.Player('audio/pad2.mp3').chain(pitchShift);
+var pad3 = new Tone.Player('audio/pad3.mp3').chain(pitchShift);
+var pad4 = new Tone.Player('audio/pad4.mp3').chain(pitchShift);
+
+
+
+
+// Sound selected
+
+var kick =
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // Sample code to load a sound file
@@ -69,7 +148,7 @@ pitchShiftSlider.addEventListener('input', function() {
 // The following block of code will run when the play button is clicked
 document.querySelector('#playButton').onclick = function() {
   console.log('The play button has been clicked.');
-  sample.start()
+
   // Play a middle C, which will sound until the stop button is clicked
   synth.triggerAttack();
 };
@@ -80,7 +159,7 @@ document.querySelector('#stopButton').onclick = function() {
 
   // Stop the note from sounding
   synth.triggerRelease();
-  sample.Stop();
+
 };
 
 </script>
